@@ -2,10 +2,10 @@ import { ScreenView } from "@/components/ScreenView/ScreenView";
 
 import { Typography } from "@/ui-kit/components";
 
-export default function ExploreScreen() {
+export default function OnboardingScreen() {
   return (
     <ScreenView>
-      <Typography>ExploreScreen</Typography>
+      <Typography>OnboardingScreen 1</Typography>
     </ScreenView>
   );
 }

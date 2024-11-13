@@ -1,12 +1,13 @@
+import React from "react";
+
 import { ScreenView } from "@/components/ScreenView/ScreenView";
 
 import { Typography } from "@/ui-kit/components";
 
-export default function OnboardingScreen() {
-  console.log("OnboardingScreen");
+export default function AddKeyPage() {
   return (
     <ScreenView>
-      <Typography>OnboardingScreen 1</Typography>
+      <Typography>AddKeyPage</Typography>
     </ScreenView>
   );
 }

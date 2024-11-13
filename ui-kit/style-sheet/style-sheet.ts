@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { ViewStyle } from "react-native";
 import EStyleSheet from "react-native-extended-stylesheet";
 import { memoize } from "lodash";
 
@@ -6,9 +7,11 @@ import { Palette, useTheme } from "../theme";
 import { NamedStyles } from "./@types";
 import { transformRules } from "./utils";
 
-export const createStaticStyles = <S extends NamedStyles<S>>(styles: S): S => {
+export const createStaticStyles = <S extends Record<string, ViewStyle>>(
+  styles: S
+): S => {
   const result = {} as S;
-  const styleKeys = Object.keys(styles) as (keyof typeof styles)[];
+  const styleKeys = Object.keys(styles) as (keyof S)[];
 
   return EStyleSheet.create(
     styleKeys.reduce((acc, key) => {

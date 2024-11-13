@@ -19,7 +19,7 @@ const PremiumAccessStack = () => {
   console.log("PremiumAccessStack");
   return (
     <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="(accounts)" />
     </Stack>
   );
 };
@@ -34,7 +34,7 @@ const NonPremiumAccessStack = () => {
   );
 };
 
-const RootLayoutContent = () => {
+export const RootLayoutContent = () => {
   const { hasPremiumAccess, initialLoading: initialSubscriptionLoading } =
     useSubscription();
   const [fontsLoaded] = useFonts({
