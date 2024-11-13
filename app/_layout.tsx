@@ -15,28 +15,8 @@ import { APPHUD_API_KEY } from "@/constants/env";
 SplashScreen.preventAutoHideAsync();
 ApphudSdk.start({ apiKey: APPHUD_API_KEY });
 
-const PremiumAccessStack = () => {
-  console.log("PremiumAccessStack");
-  return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="(accounts)" />
-    </Stack>
-  );
-};
-
-const NonPremiumAccessStack = () => {
-  console.log("NonPremiumAccessStack");
-
-  return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="(onboarding)" />
-    </Stack>
-  );
-};
-
-export const RootLayoutContent = () => {
-  const { hasPremiumAccess, initialLoading: initialSubscriptionLoading } =
-    useSubscription();
+const RootLayoutContent = () => {
+  const { initialLoading: initialSubscriptionLoading } = useSubscription();
   const [fontsLoaded] = useFonts({
     // TODO: добавить другие шрифты
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
@@ -50,7 +30,12 @@ export const RootLayoutContent = () => {
 
   if (!loaded) return null;
 
-  return hasPremiumAccess ? <PremiumAccessStack /> : <NonPremiumAccessStack />;
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="(app)" />
+      <Stack.Screen name="(onboarding)" />
+    </Stack>
+  );
 };
 
 const RootLayout = () => {

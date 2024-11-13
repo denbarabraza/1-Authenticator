@@ -6,7 +6,7 @@ export default function OnboardingScreen() {
   console.log("OnboardingScreen");
   return (
     <ScreenView>
-      <Typography>OnboardingScreen 1</Typography>
+      <Typography>OnboardingScreen 12</Typography>
     </ScreenView>
   );
 }

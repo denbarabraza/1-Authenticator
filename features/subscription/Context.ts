@@ -4,7 +4,7 @@ import { noop } from "lodash";
 import { SubscriptionContextProps } from "./@types";
 
 export const SubscriptionContext = createContext<SubscriptionContextProps>({
-  hasPremiumAccess: false,
+  hasPremiumAccess: true,
   initialLoading: true,
   purchase: noop as SubscriptionContextProps["purchase"],
   subscriptions: [],

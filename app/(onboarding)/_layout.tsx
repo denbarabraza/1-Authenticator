@@ -1,10 +1,15 @@
-import { Stack } from "expo-router";
+import { Redirect, Stack } from "expo-router";
+
+import { useSubscription } from "@/features/subscription";
 
 export default function OnboardingLayout() {
-  console.log("OnboardingScreen");
+  const { hasPremiumAccess } = useSubscription();
+
+  if (hasPremiumAccess) return <Redirect href="/(app)" />;
+
   return (
     <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="ob1" />
+      <Stack.Screen name="index" />
       <Stack.Screen name="ob2" />
     </Stack>
   );
